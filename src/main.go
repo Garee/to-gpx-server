@@ -92,7 +92,9 @@ func handleConvert(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	_, err = file.Seek(0, io.SeekStart)
+	// Seek to the first "<" character to handle files that start with whitespace.
+	offset := bytes.Index(buf, []byte("<"))
+	_, err = file.Seek(int64(offset), io.SeekStart)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
