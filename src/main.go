@@ -126,7 +126,7 @@ func handleConvert(w http.ResponseWriter, r *http.Request) {
 
 	converted, err := toGpx(dst.Name(), tmp)
 	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
+		http.Error(w, "The conversion was unsuccesful. Is the file type supported?", http.StatusInternalServerError)
 		return
 	}
 

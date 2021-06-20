@@ -1,9 +1,6 @@
 # To GPX
 
-A service to convert .{tcx} files to .gpx files.
+This is the server code for the "To GPX" web application.
 
-## TODO
-
-- Trim input file contents otherwise gpsbabel does not parse them.
-- Add test(s)
+The client code can be found at [Garee/to-gpx-client](https://github.com/Garee/to-gpx-client).
 
